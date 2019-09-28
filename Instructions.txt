@@ -1,0 +1,31 @@
+Instructions
+
+1) Download and unzip the script package.
+
+2) Upload the script on your server.
+
+3) Edit form.php file and set your email address, where message will be received, and email subject in the following lines:
+
+define('_EMAIL_TO', 'admin@domain.com');
+define('_EMAIL_FROM', 'no-reply@domain.com');
+define('_EMAIL_SUBJECT', 'Contact Form');
+
+4) Open the example web page index.html using any web browser.
+
+To load the form on another web page, just add the following code before closing the <body> tag:
+
+<script type="text/javascript" src="embed.js"></script>
+
+If the Contact Form is loaded in a folder on your server, you need to specify the path for the js file. For example:
+
+<script type="text/javascript" src="/FOLDER_NAME/embed.js"></script>
+
+5) If the form is loaded in different file and from another folder on your server, you need to specify the path where the files are located. 
+
+In order to make it work, open file "embed.js" and change line 135 to point to your sliding form folder. 
+
+It is now like this: 
+server_url = document.location.href.replace(/([a-z.]+)$/i, '');
+
+change it to
+server_url = 'http://YOUR DOMAIN/FOLDER_NAME/';
